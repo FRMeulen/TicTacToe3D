@@ -17,7 +17,7 @@ char fields[fieldWidth][fieldDepth][fieldHeight];	//3d Array to hold marks
 int player = 1;	//Player currently active
 char quit;	//Int to prevent program from closing
 
-//Methods
+			//Methods
 void TicTacToe3D::enterMark() {
 	//Location ints, all unreachable by default
 	int layer = -1;	//Desired layer
@@ -30,7 +30,7 @@ void TicTacToe3D::enterMark() {
 	cin >> column;	//Store desired column
 	cout << "Row: ";	//Ask which row is desired
 	cin >> row;	//Store desired row
-	
+
 
 	if (fields[row - 1][layer - 1][column - 1] == ' ') {
 		if (player == 1) {	//If player 1 is active...
@@ -49,7 +49,7 @@ void TicTacToe3D::enterMark() {
 		cout << "Field already taken!" << endl;
 	}
 
-	
+
 
 	system("CLS");	//Clear screen
 	printBoard();	//Print board with move made
@@ -75,7 +75,7 @@ void TicTacToe3D::printBoard() {
 	cout << "\t\t\t   Player 1 'X' vs. Player 2 'O'" << endl << endl;
 
 	for (int i = 0; i < 4; i++) {
-		cout << "Layer " << i+1 << "                ";	//Prints layer labels
+		cout << "Layer " << i + 1 << "                ";	//Prints layer labels
 	}
 	cout << endl;
 
@@ -90,7 +90,7 @@ void TicTacToe3D::printBoard() {
 			cout << "         ";	//Space between layers
 		}
 		cout << endl;	//Go to next line
-		
+
 		if (j < 3) {
 			for (int m = 0; m < 4; m++) {	//Horizontal lines
 				for (int n = 0; n < 3; n++) {
