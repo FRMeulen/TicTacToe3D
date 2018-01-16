@@ -7,9 +7,6 @@
 //Namespace
 using namespace std;
 
-//Fields
-std::vector<Observer*> observerList;
-
 //Constructor
 Subject::Subject()
 {
@@ -18,23 +15,33 @@ Subject::Subject()
 //Destructor
 Subject::~Subject()
 {
+	//For every observer...
+	for (int i = 0; i < observers.size(); i++) {
+		//...remove subject
+		observers[i]->subject = NULL;
+	}
 }
 
 //Methods
 void Subject::notifyAll() {
-	for (int i = 0; i < observerList.size; i++) {
-		observerList[i]->update();
+	for (int i = 0; i < observers.size(); i++) {
+		observers[i]->update();
 	}
 }
 
 void Subject::attach(Observer *obs) {
-	observerList.push_back(obs);
+	observers.push_back(obs);
+	obs->subject = this;
 }
 
 void Subject::detach(Observer *obs) {
-	for (int i = 0; i < observerList.max_size; i++) {
-		if (observerList[i] == obs) {
-			observerList.erase(observerList.begin() + i - 1);
+	//For every observer in list...
+	for (int i = 0; i < observers.size(); i++) {
+		//...check if [i] is this one...
+		if (observers[i] == obs) {
+			//...and if so remove pointer from vector
+			observers.erase(observers.begin() + i);
+			obs->subject = NULL;
 		}
 	}
 }

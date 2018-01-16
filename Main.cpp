@@ -1,26 +1,21 @@
 //Inclusions
 #include "stdafx.h"
 #include <iostream>
-#include "TicTacToe3D.h"
+#include "TicTacToeSubject.h"
 
 //Namespace
 using namespace std;
 
 //Fields
-TicTacToe3D ticTacToe;
+TicTacToeSubject subject;
 
 //Main
 int main()
 {
-	/*
-	ticTacToe.fillArray();
-	ticTacToe.printBoard();
-	for (int i = 0; i < 64; i++) {
-		ticTacToe.enterMark();
-	}
-	*/
-
-	cout << endl << endl;
+	cout << "Hey" << endl;
+	cout << subject.getState() << endl;
+	cout << "End test" << endl;
+	
 	system("Pause");
 	return 0;
 }

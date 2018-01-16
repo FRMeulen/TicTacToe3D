@@ -3,11 +3,18 @@
 #include "TicTacToeObserver.h"
 
 //Constructor
-TicTacToeObserver::TicTacToeObserver()
+TicTacToeObserver::TicTacToeObserver(Subject subject):Observer(subject)
 {
+	
 }
 
 //Destructor
 TicTacToeObserver::~TicTacToeObserver()
 {
+}
+
+
+//Methods
+void TicTacToeObserver::update() {
+
 }

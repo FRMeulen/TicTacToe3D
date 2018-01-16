@@ -1,13 +1,12 @@
 //Pragma
 #pragma once
 
-//Namespace
-using namespace std;
-
 //Inclusions
 #include "Observer.h"
-#include "AlphaObserver.h"
-#include "BinObserver.h"
+#include <vector>
+
+//Namespace
+using namespace std;
 
 //Class
 class Subject
@@ -16,6 +15,8 @@ class Subject
 public:
 	Subject();	//Constructor
 	~Subject();	//Destructor
+
+	vector<Observer*> observers;
 
 	void notifyAll();
 	void attach(Observer*);

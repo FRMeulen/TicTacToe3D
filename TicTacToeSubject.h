@@ -2,23 +2,22 @@
 #pragma once
 
 //Inclusions
-#include "Observer.h"
+#include "Subject.h"
+#include "TicTacToeObserver.h"
 
 //Definitions
-#define fieldWidth 4
-#define fieldHeight 4
-#define fieldDepth 4
+#define fieldCount 64
 
 //Class
-class TicTacToeSubject
+class TicTacToeSubject:public Subject
 {
 public:
-	char state[fieldWidth][fieldHeight][fieldDepth];	//Field state
+	char state[fieldCount] = {'a'};	//Field state
 
 	TicTacToeSubject();	//Constructor
 	~TicTacToeSubject();	//Destructor
 
-	void attach(Observer);
-	char getState();
+	void attach(TicTacToeObserver);
+	char* getState();
 	void setState();
 };

@@ -11,3 +11,16 @@ TicTacToeSubject::TicTacToeSubject()
 TicTacToeSubject::~TicTacToeSubject()
 {
 }
+
+//Methods
+void TicTacToeSubject::attach(TicTacToeObserver observer) {
+
+}
+
+char* TicTacToeSubject::getState() {
+	return state;
+}
+
+void TicTacToeSubject::setState() {
+	
+}

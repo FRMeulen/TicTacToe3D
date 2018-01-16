@@ -10,7 +10,7 @@ class TicTacToeObserver : public Observer
 public:
 	char copiedState;
 	
-	TicTacToeObserver();	//Constructor
+	TicTacToeObserver(Subject subject);	//Constructor
 	~TicTacToeObserver();	//Destructor
 
 	void update();
