@@ -3,16 +3,17 @@
 
 //Inclusions
 #include "Observer.h"
+#include "TicTacToeSubject.h"
 
 //Class
-class TicTacToeObserver : public Observer
-{
+class TicTacToeObserver : public Observer {
+private:
+	char copiedState[64];
+	TicTacToeSubject *subject;
 public:
-	char copiedState;
+	TicTacToeObserver(Subject *);	//Constructor
+	virtual ~TicTacToeObserver();	//Destructor
 	
-	TicTacToeObserver(Subject subject);	//Constructor
-	~TicTacToeObserver();	//Destructor
-
-	void update();
+	void update(TicTacToeSubject *);
+	void copyState(char *);
 };
-

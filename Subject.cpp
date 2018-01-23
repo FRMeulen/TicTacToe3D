@@ -1,5 +1,4 @@
 //Inclusions
-#include "stdafx.h"
 #include "Subject.h"
 #include "Observer.h"
 #include <vector>

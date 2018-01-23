@@ -1,8 +1,19 @@
+//Pragma
 #pragma once
-class BinObserver
-{
-public:
-	BinObserver();
-	~BinObserver();
-};
 
+//Inclusions
+#include "TicTacToeObserver.h"
+#include "TicTacToeSubject.h"
+
+//Class
+class BinObserver : public TicTacToeObserver {
+private:
+	TicTacToeSubject * subject;
+public:
+	typedef TicTacToeObserver super;
+	
+	BinObserver(TicTacToeSubject *);	//Constructor
+	virtual ~BinObserver();	//Destructor
+	
+	void update();
+};

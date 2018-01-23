@@ -1,12 +1,23 @@
-#include "stdafx.h"
+//Inclusions
 #include "BinObserver.h"
+#include "TicTacToeSubject.h"
+#include "TicTacToeObserver.h"
+#include <iostream>
 
+//Namespace
+using namespace std;
 
-BinObserver::BinObserver()
-{
+//Constructor
+BinObserver::BinObserver(TicTacToeSubject *subject) : TicTacToeObserver(subject) {
+	this->subject = subject;
 }
 
+//Destructor
+BinObserver::~BinObserver() {
 
-BinObserver::~BinObserver()
-{
+}
+
+//Methods
+void BinObserver::update() {
+	super::update(subject);
 }

@@ -4,7 +4,7 @@
 #include <iostream>
 
 //Constructor
-Observer::Observer(Subject *subject)
+Observer::Observer(Subject* subject)
 {
 	// Attach observer to subject
 	subject->attach(this);

@@ -1,12 +1,24 @@
-#include "stdafx.h"
+//Inclusions
 #include "AlphaObserver.h"
+#include "TicTacToeSubject.h"
+#include "TicTacToeObserver.h"
+#include <iostream>
 
+//Namespace
+using namespace std;
 
-AlphaObserver::AlphaObserver()
+//Constructor
+AlphaObserver::AlphaObserver(TicTacToeSubject *subject) : TicTacToeObserver(subject)
 {
+	this->subject = subject;
 }
 
+//Destructor
+AlphaObserver::~AlphaObserver() {
 
-AlphaObserver::~AlphaObserver()
-{
+}
+
+//Methods
+void AlphaObserver::update() {
+	super::update(subject);
 }

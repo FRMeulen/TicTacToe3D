@@ -8,7 +8,7 @@ class Subject;
 class Observer
 {
 public:
-	Subject * subject;	//Subject pointer
+	Subject *subject;	//Subject pointer
 	Observer(Subject *);	//Constructor
 	virtual ~Observer();	//Destructor
 	virtual void update() = 0;	//Update

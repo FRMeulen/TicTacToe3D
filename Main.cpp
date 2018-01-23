@@ -1,5 +1,4 @@
 //Inclusions
-#include "stdafx.h"
 #include <iostream>
 #include "TicTacToeSubject.h"
 
@@ -12,10 +11,7 @@ TicTacToeSubject subject;
 //Main
 int main()
 {
-	cout << "Hey" << endl;
-	cout << subject.getState() << endl;
-	cout << "End test" << endl;
-	
+	subject.printBoard();
 	system("Pause");
 	return 0;
 }

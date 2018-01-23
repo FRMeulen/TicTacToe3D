@@ -9,15 +9,17 @@
 #define fieldCount 64
 
 //Class
-class TicTacToeSubject:public Subject
-{
+class TicTacToeSubject : public Subject {
 public:
-	char state[fieldCount] = {'a'};	//Field state
+	char state[fieldCount] = { ' ' };	//Field state
+	bool gameAlive = true;	//Game ended
+	int activePlayer = 1;
 
 	TicTacToeSubject();	//Constructor
 	~TicTacToeSubject();	//Destructor
 
-	void attach(TicTacToeObserver);
 	char* getState();
-	void setState();
+	void setState(int pos, char mark);
+	void printBoard();
+	void setMark();
 };
