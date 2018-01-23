@@ -18,9 +18,10 @@ TicTacToeObserver::~TicTacToeObserver() {
 }
 
 void TicTacToeObserver::update(TicTacToeSubject *subject) {
-	copyState(copiedState);	//Update game state in observer
+	copyState();	//Update game state in observer
 
 	cout << "Updated observers!" << endl;
+	
 
 	//Check for winner
 	int temp = 0;
@@ -37,8 +38,9 @@ void TicTacToeObserver::update(TicTacToeSubject *subject) {
 	
 }
 
-void TicTacToeObserver::copyState(char *obsState) {
+void TicTacToeObserver::copyState() {
 	for (int i = 0; i < 64; i++) {
-		obsState[i] = subject->getState[i];
+		copiedState[i] = subject->getState()[i];
 	}
+	cout << copiedState[12];
 }

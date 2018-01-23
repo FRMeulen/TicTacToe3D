@@ -16,7 +16,7 @@ Observer::~Observer()
 	// Detach Observer from attached subject
 	if (subject != NULL)
 	{
-		subject->attach(this);
+		subject->detach(this);
 	}
 }
 

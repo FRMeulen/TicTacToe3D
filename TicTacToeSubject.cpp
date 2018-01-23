@@ -141,5 +141,10 @@ void TicTacToeSubject::setMark() {
 
 	system("cls");	//Clear screen
 	notifyAll();
-	printBoard();
+}
+
+void TicTacToeSubject::defaultState() {
+	for (int i = 0; i < 64; i++) {
+		state[i] = 'a';
+	}
 }

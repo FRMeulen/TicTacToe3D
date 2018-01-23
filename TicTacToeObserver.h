@@ -3,7 +3,9 @@
 
 //Inclusions
 #include "Observer.h"
-#include "TicTacToeSubject.h"
+
+//Class dependencies
+class TicTacToeSubject;
 
 //Class
 class TicTacToeObserver : public Observer {
@@ -15,5 +17,8 @@ public:
 	virtual ~TicTacToeObserver();	//Destructor
 	
 	void update(TicTacToeSubject *);
-	void copyState(char *);
+	void copyState();
 };
+
+//Late Inclusions
+#include "TicTacToeSubject.h"

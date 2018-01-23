@@ -3,7 +3,6 @@
 
 //Inclusions
 #include "Subject.h"
-#include "TicTacToeObserver.h"
 
 //Definitions
 #define fieldCount 64
@@ -11,7 +10,7 @@
 //Class
 class TicTacToeSubject : public Subject {
 public:
-	char state[fieldCount] = { ' ' };	//Field state
+	char state[fieldCount];	//Field state
 	bool gameAlive = true;	//Game ended
 	int activePlayer = 1;
 
@@ -22,4 +21,5 @@ public:
 	void setState(int pos, char mark);
 	void printBoard();
 	void setMark();
+	void defaultState();
 };
