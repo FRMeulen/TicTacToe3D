@@ -9,8 +9,8 @@ using namespace std;
 
 //Fields
 TicTacToeSubject subject;
-AlphaObserver alpha;
-BinObserver bin;
+AlphaObserver* alpha;
+BinObserver* bin;
 
 //Main
 int main()
