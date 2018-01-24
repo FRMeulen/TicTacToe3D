@@ -15,14 +15,23 @@ BinObserver* bin;
 //Main
 int main()
 {
+	//Create subject and observers
 	subject = new TicTacToeSubject();
 	alpha = new AlphaObserver(subject);
 	bin = new BinObserver(subject);
 
+	//Set default states
+	alpha->defaultState();
+	bin->defaultState();
 	subject->defaultState();
+	
+	//Attach observers
 	subject->attach(alpha);
 	subject->attach(bin);
-	subject->printBoard();	
-	system("Pause");
-	return 0;
+	
+	//Initialize game
+	subject->printBoard();
+
+	system("Pause");	//Pause to prevent instant exit
+	return 0;	//Terminate program
 }

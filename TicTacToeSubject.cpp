@@ -145,6 +145,6 @@ void TicTacToeSubject::setMark() {
 
 void TicTacToeSubject::defaultState() {
 	for (int i = 0; i < 64; i++) {
-		state[i] = 'a';
+		state[i] = ' ';
 	}
 }

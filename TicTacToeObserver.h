@@ -17,6 +17,7 @@ public:
 	virtual ~TicTacToeObserver();	//Destructor
 	
 	void update(TicTacToeSubject *);
+	void defaultState();
 	void copyState();
 };
 
