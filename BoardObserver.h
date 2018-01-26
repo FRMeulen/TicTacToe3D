@@ -6,15 +6,16 @@
 #include "TicTacToeSubject.h"
 
 //Class
-class AlphaObserver : public TicTacToeObserver
+class BoardObserver : public TicTacToeObserver
 {
 private:
 	TicTacToeSubject * subject;
 public:
 	typedef TicTacToeObserver super;
 	
-	AlphaObserver(TicTacToeSubject *);	//Constructor
-	virtual ~AlphaObserver();	//Destructor
+	BoardObserver(TicTacToeSubject *);	//Constructor
+	virtual ~BoardObserver();	//Destructor
 	
 	void update();
+	void printBoard();
 };

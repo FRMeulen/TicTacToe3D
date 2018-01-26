@@ -1,7 +1,7 @@
 //Inclusions
 #include <iostream>
 #include "TicTacToeSubject.h"
-#include "AlphaObserver.h"
+#include "BoardObserver.h"
 #include "BinObserver.h"
 
 //Namespace
@@ -9,7 +9,7 @@ using namespace std;
 
 //Fields
 TicTacToeSubject *subject;
-AlphaObserver* alpha;
+BoardObserver* board;
 BinObserver* bin;
 
 //Main
@@ -17,20 +17,20 @@ int main()
 {
 	//Create subject and observers
 	subject = new TicTacToeSubject();
-	alpha = new AlphaObserver(subject);
+	board = new BoardObserver(subject);
 	bin = new BinObserver(subject);
 
 	//Set default states
-	alpha->defaultState();
-	bin->defaultState();
 	subject->defaultState();
+	board->copyState(subject->getState());
+	bin->copyState(subject->getState());
 	
 	//Attach observers
-	subject->attach(alpha);
+	subject->attach(board);
 	subject->attach(bin);
-	
+
 	//Initialize game
-	subject->printBoard();
+	subject->playGame();
 
 	system("Pause");	//Pause to prevent instant exit
 	return 0;	//Terminate program

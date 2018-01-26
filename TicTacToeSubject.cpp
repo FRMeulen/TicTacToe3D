@@ -24,33 +24,8 @@ void TicTacToeSubject::setState(int pos, char mark) {
 	state[pos] = mark;
 }
 
-void TicTacToeSubject::printBoard() {
+void TicTacToeSubject::playGame() {
 	cout << "Player " << activePlayer << "'s turn!" << endl;
-
-	//Print board
-	cout << "    Layer 1   \t\t    Layer 2   \t\t    Layer 3   \t\t    Layer 4" << endl << endl;
-	for (int x = 0; x < 4; x++) {	// For every layer increment x
-		for (int y = 0; y < 4; y++) {	// For every row increment y
-			for (int z = 0; z < 4; z++) {	// For every column increment z
-				cout << " " << state[16*y + 4*x + z];	//Print state in right cubicle
-				if (z < 3) {	//For every cubicle except right one
-					cout << " " << char(179);	//Print right border
-				}
-			}
-			cout << "		";	//Print space between layers
-		}
-		cout << endl;	//Next line
-		if (x < 3) {	//For every cubicle except bottom one
-			for (int i = 0; i < 4; i++) {	//Add bottom border
-				for (int j = 0; j < 3; j++) {	//For every cubicle
-					cout << char(196) << char(196) << char(196) << char(197);	//Print bottom border and intersection
-				}
-				cout << char(196) << char(196) << char(196) << "		";	//Print space between tabs
-			}
-			cout << endl;
-		}
-	}
-
 	cout << endl;
 	setMark();
 }
@@ -127,12 +102,10 @@ void TicTacToeSubject::setMark() {
 
 	if (activePlayer == 1) {
 		setState(16 * layer + 4 * row + column, 'X');
-		activePlayer = 2;
 	}
 	
 	else if (activePlayer == 2) {
 		setState(16 * layer + 4 * row + column, 'O');
-		activePlayer = 1;
 	}
 
 	else {

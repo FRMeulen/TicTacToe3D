@@ -19,7 +19,7 @@ public:
 
 	char* getState();
 	void setState(int pos, char mark);
-	void printBoard();
+	void playGame();
 	void setMark();
 	void defaultState();
 };

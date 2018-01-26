@@ -30,7 +30,7 @@ void Subject::notifyAll() {
 
 void Subject::attach(Observer *obs) {
 	observers.push_back(obs);
-	obs->subject = this;
+	//obs->subject = this;
 }
 
 void Subject::detach(Observer *obs) {

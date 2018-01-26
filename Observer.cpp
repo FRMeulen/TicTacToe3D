@@ -4,18 +4,14 @@
 #include <iostream>
 
 //Constructor
-Observer::Observer(Subject* subject)
-{
-	// Attach observer to subject
-	subject->attach(this);
+Observer::Observer(Subject* subject) {
+
 }
 
 //Destructor
-Observer::~Observer()
-{
+Observer::~Observer() {
 	// Detach Observer from attached subject
-	if (subject != NULL)
-	{
+	if (subject != NULL) {
 		subject->detach(this);
 	}
 }
