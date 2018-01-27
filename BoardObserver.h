@@ -18,4 +18,5 @@ public:
 	
 	void update();
 	void printBoard();
+	int checkWinOptions();
 };

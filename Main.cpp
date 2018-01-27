@@ -2,7 +2,7 @@
 #include <iostream>
 #include "TicTacToeSubject.h"
 #include "BoardObserver.h"
-#include "BinObserver.h"
+#include "MoveObserver.h"
 
 //Namespace
 using namespace std;
@@ -10,7 +10,7 @@ using namespace std;
 //Fields
 TicTacToeSubject *subject;
 BoardObserver* board;
-BinObserver* bin;
+MoveObserver* moves;
 
 //Main
 int main()
@@ -18,19 +18,25 @@ int main()
 	//Create subject and observers
 	subject = new TicTacToeSubject();
 	board = new BoardObserver(subject);
-	bin = new BinObserver(subject);
+	moves = new MoveObserver(subject);
 
-	//Set default states
+	//Set default state
 	subject->defaultState();
-	board->copyState(subject->getState());
-	bin->copyState(subject->getState());
 	
 	//Attach observers
 	subject->attach(board);
-	subject->attach(bin);
+	subject->attach(moves);
+
+	//Update observers
+	subject->notifyAll();
 
 	//Initialize game
 	subject->playGame();
+
+	//Delete subject and observers once game is finished
+	delete moves;
+	delete board;
+	delete subject;
 
 	system("Pause");	//Pause to prevent instant exit
 	return 0;	//Terminate program

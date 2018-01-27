@@ -6,14 +6,18 @@
 #include "TicTacToeSubject.h"
 
 //Class
-class BinObserver : public TicTacToeObserver {
+class MoveObserver : public TicTacToeObserver {
 private:
 	TicTacToeSubject * subject;
+
+	int xs = 0;
+	int os = 0;
 public:
 	typedef TicTacToeObserver super;
-	
-	BinObserver(TicTacToeSubject *);	//Constructor
-	virtual ~BinObserver();	//Destructor
+
+	MoveObserver(TicTacToeSubject *);	//Constructor
+	virtual ~MoveObserver();	//Destructor
 	
 	void update();
+	void countMoves();
 };

@@ -19,7 +19,6 @@ public:
 
 	void update(TicTacToeSubject *);
 	void copyState(char* originalState);
-	void checkWinOptions();
 };
 
 //Late Inclusions

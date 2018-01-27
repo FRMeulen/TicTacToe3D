@@ -12,7 +12,7 @@ class TicTacToeSubject : public Subject {
 public:
 	char state[fieldCount];	//Field state
 	bool gameAlive = true;	//Game ended
-	int activePlayer = 1;
+	int activePlayer = 2;
 
 	TicTacToeSubject();	//Constructor
 	~TicTacToeSubject();	//Destructor
@@ -22,4 +22,5 @@ public:
 	void playGame();
 	void setMark();
 	void defaultState();
+	void endGame();
 };

@@ -1,4 +1,5 @@
 //Inclusions
+#include <iostream>
 #include "Subject.h"
 #include "Observer.h"
 #include <vector>
@@ -30,16 +31,12 @@ void Subject::notifyAll() {
 
 void Subject::attach(Observer *obs) {
 	observers.push_back(obs);
-	//obs->subject = this;
 }
 
 void Subject::detach(Observer *obs) {
-	//For every observer in list...
-	for (int i = 0; i < observers.size(); i++) {
-		//...check if [i] is this one...
-		if (observers[i] == obs) {
-			//...and if so remove pointer from vector
-			observers.erase(observers.begin() + i);
+	for (int i = 0; i < observers.size(); i++) {	//For every observer in list...
+		if (observers[i] == obs) {	//...check if [i] is this one...
+			observers.erase(observers.begin() + i);	//...and if so remove pointer from vector
 			obs->subject = NULL;
 		}
 	}

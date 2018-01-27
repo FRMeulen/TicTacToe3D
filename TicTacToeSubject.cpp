@@ -25,12 +25,12 @@ void TicTacToeSubject::setState(int pos, char mark) {
 }
 
 void TicTacToeSubject::playGame() {
-	cout << "Player " << activePlayer << "'s turn!" << endl;
-	cout << endl;
 	setMark();
 }
 
 void TicTacToeSubject::setMark() {
+	cout << "*** Subject ***" << endl;
+	
 	int layer = NULL;	//Holds chosen layer
 	int column = NULL;	//Holds chosen column
 	int row = NULL;	//Holds chosen row
@@ -114,10 +114,27 @@ void TicTacToeSubject::setMark() {
 
 	system("cls");	//Clear screen
 	notifyAll();
+	
+	if (gameAlive) {
+		playGame();
+	}
+
+	else {
+		endGame();
+	}
 }
 
 void TicTacToeSubject::defaultState() {
 	for (int i = 0; i < 64; i++) {
 		state[i] = ' ';
 	}
+}
+
+void TicTacToeSubject::endGame() {
+	//Detach observers
+	for (int i = 0; i < observers.size(); i++) {
+		detach(observers[i]);
+	}
+
+	cout << "Game ended!" << endl;
 }
